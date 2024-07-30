@@ -6,12 +6,13 @@ import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
 import Avatar from '@mui/material/Avatar';
 import IconButton from '@mui/material/IconButton';
-import FolderIcon from '@mui/icons-material/Folder';
 import AddIcon from '@mui/icons-material/Add';
+import CardMedia from '@mui/material/CardMedia';  
 
 interface Category {
   id: number;
   name: string;
+  url: string;
 }
 
 interface CategoriesProps {
@@ -24,33 +25,36 @@ const Demo = styled('div')(({ theme }) => ({
 
 export default function CategoryList({ categories }: CategoriesProps) {
   return (
-   
-            <List >
-              {categories.map((category) => (
-                <ListItem
-                  key={category.id}
-                  sx={{ display: 'flex', alignItems: 'center' }}
-                  secondaryAction={
-                    <IconButton
-                      edge="end"
-                      aria-label="Add"
-                    >
-                      <AddIcon sx={{color:'#52b788'}} />
-                    </IconButton>
-                  }
-                >
-                  <ListItemAvatar>
-                    <Avatar sx={{background:'#52b788',color:'#081c15'}}>
-                      <FolderIcon />
-                    </Avatar>
-                  </ListItemAvatar>
-                  <ListItemText
-                    primary={category.name}
-                    primaryTypographyProps={{ sx: { color: 'black', } }} 
-                  />
-                </ListItem>
-              ))}
-            </List>
-         
+    <List>
+      {categories.map((category) => (
+        <ListItem
+          key={category.id}
+          sx={{ display: 'flex', alignItems: 'center' }}
+          secondaryAction={
+            <IconButton
+              edge="end"
+              aria-label="Add"
+            >
+              <AddIcon sx={{ color: '#52b788' }} />
+            </IconButton>
+          }
+        >
+          <ListItemAvatar>
+            <Avatar>
+              <CardMedia
+                component="img"
+                image={category.url}
+                sx={{ width: 40, height: 40 ,background: '#081c15' }} 
+                alt={category.name}
+              />
+            </Avatar>
+          </ListItemAvatar>
+          <ListItemText
+            primary={category.name}
+            primaryTypographyProps={{ sx: { color: 'black' } }} 
+          />
+        </ListItem>
+      ))}
+    </List>
   );
 }
