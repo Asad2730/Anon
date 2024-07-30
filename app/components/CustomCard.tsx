@@ -14,17 +14,18 @@ export const CustomCard = ({ imageUrl, name }: CustomCardProps) => (
     sx={{ 
       display: 'flex', 
       flexDirection: 'row', 
-      height: '100%', 
-      width: '100%', 
+      height: 'auto', 
+      width: { xs: '100%', sm: 'auto' }, // Adjust width based on screen size
       overflow: 'hidden',
-      borderRadius: 2 
+      borderRadius: 2,
+      mb: 2 // Add margin bottom for spacing between cards
     }}
   >
     <CardMedia
       component="img"
       sx={{ 
-        width: 150, 
-        height: '100%', 
+        width: { xs: '100%', sm: 150 }, // Adjust width based on screen size
+        height: { xs: 150, sm: '100%' }, // Adjust height based on screen size
         objectFit: 'contain', 
         background: '#081c15',
         borderTopLeftRadius: 2, // Ensure consistent radius with Card
@@ -53,6 +54,7 @@ export const CustomCard = ({ imageUrl, name }: CustomCardProps) => (
             overflow: 'hidden',
             textOverflow: 'ellipsis', 
             whiteSpace: 'nowrap',
+            fontSize: { xs: '0.875rem', sm: '1rem'  } // Adjust font size based on screen size
           }}
         >
           {name}
