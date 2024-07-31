@@ -2,7 +2,6 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
-import Avatar from '@mui/material/Avatar';
 import CardMedia from '@mui/material/CardMedia';
 import { Grid, Typography } from '@mui/material';
 
@@ -28,24 +27,24 @@ export default function ProductList({ products }: ProductProps) {
               component="img"
               image={product.url}
               alt={product.name}
-              sx={{ width: 60, height: 60 }} // Adjust size as needed
+              sx={{ width: 60, height: 60 }} 
             />
           </ListItemAvatar>
           <ListItemText
             primary={
-              <Typography variant="body1" sx={{ color: '#52b788', fontWeight: 'bold' }}>
+              <Typography variant="body1" sx={{ color: 'white', fontWeight: 'bold' }}>
                 {product.name}
               </Typography>
             }
             secondary={
               <Grid container spacing={1}>
                 <Grid item xs={6}>
-                  <Typography variant="body2" sx={{ color: '#52b788' }}>
+                  <Typography variant="body2" sx={{ color: 'white' }}>
                     {product.companyName}
                   </Typography>
                 </Grid>
                 <Grid item xs={6} textAlign="right">
-                  <Typography variant="body2" sx={{ color: '#52b788' }}>
+                  <Typography variant="body2" sx={{ color: 'white' }}>
                     ${product.price.toFixed(2)}
                   </Typography>
                 </Grid>

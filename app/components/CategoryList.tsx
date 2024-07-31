@@ -51,7 +51,7 @@ export default function CategoryList({ categories }: CategoriesProps) {
           </ListItemAvatar>
           <ListItemText
             primary={category.name}
-            primaryTypographyProps={{ sx: { color: 'black' } }} 
+            primaryTypographyProps={{ sx: { color: 'white' } }} 
           />
         </ListItem>
       ))}
