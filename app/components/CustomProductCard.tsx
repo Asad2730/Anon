@@ -12,6 +12,7 @@ interface ProductProps {
   companyName: string;
   date: Date;
   rating: number;
+  price:number;
 }
 
 export default function CustomProductCard(product: ProductProps) {
@@ -35,7 +36,7 @@ export default function CustomProductCard(product: ProductProps) {
                 {product.companyName}
               </Typography>
               <Typography variant="body2" className="text-white">
-                {product.rating}
+                {product.price}
               </Typography>
             </Grid>
             <Grid item xs={12} sm={6} className="flex flex-col items-center">

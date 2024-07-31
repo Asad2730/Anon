@@ -2,7 +2,6 @@
 import { Typography, Rating, Box } from "@mui/material";
 import { useParams } from "next/navigation";
 import { products } from "@/app/tempData/tempArr";
-import NavBar from "@/app/components/NavBar";
 
 export default function ProductDetailPage() {
   const params = useParams();
@@ -13,12 +12,12 @@ export default function ProductDetailPage() {
   );
 
   return (
-    <section className="flex  w-screen bg-[#081c15] h-screen">
-      <Box className="flex  items-center p-0  min-h-screen">
+    <section className="flex w-screen bg-[#081c15] h-screen">
+      <Box className="flex items-center p-0 min-h-screen">
         <Box className="flex w-full min-w-full">
-          <img src={product?.url} alt={product?.name} />
+          <img src={product?.url} alt={product?.name} className="w-full h-auto" />
 
-          <Box className="w-full p-4 bg-[#0d1b2a] ">
+          <Box className="w-full p-4 bg-[#0d1b2a]">
             <Typography variant="h4" className="text-cyan-50 mb-2">
               {product?.name}
             </Typography>
@@ -37,6 +36,9 @@ export default function ProductDetailPage() {
                 precision={0.5}
                 sx={{ color: "gold" }}
               />
+            </Typography>
+            <Typography variant="body1" className="text-cyan-400 mb-2">
+              Price: {product?.price}
             </Typography>
             <Typography variant="body1" className="text-cyan-300">
               {product?.description}
